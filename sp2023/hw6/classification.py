@@ -154,12 +154,66 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
             Then, compute the accuracy using the logits and the labels.
             """
 
-            input_ids = ...
-            attention_mask = ...
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
 
-            output = mymodel(...)
-            predictions = ...
-            model_loss = loss(...)
+            output = mymodel(input_ids,attention_mask)
+            predictions = output[0]
+            
+def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, lr):
+    """ Train a PyTorch Module
+
+    :param torch.nn.Module mymodel: the model to be trained
+    :param int num_epochs: number of epochs to train for
+    :param torch.utils.data.DataLoader train_dataloader: DataLoader containing training examples
+    :param torch.utils.data.DataLoader validation_dataloader: DataLoader containing validation examples
+    :param torch.device device: the device that we'll be training on
+    :param float lr: learning rate
+    :return None
+    """
+
+    # here, we use the AdamW optimizer. Use torch.optim.Adam.
+    # instantiate it on the untrained model parameters with a learning rate of 5e-5
+    print(" >>>>>>>>  Initializing optimizer")
+    optimizer = torch.optim.AdamW(mymodel.parameters(), lr=lr)
+
+    # now, we set up the learning rate scheduler
+    lr_scheduler = get_scheduler(
+        "linear",
+        optimizer=optimizer,
+        num_warmup_steps=50,
+        num_training_steps=len(train_dataloader) * num_epochs
+    )
+
+    loss = torch.nn.CrossEntropyLoss()
+
+    for epoch in range(num_epochs):
+
+        # put the model in training mode (important that this is done each epoch,
+        # since we put the model into eval mode during validation)
+        mymodel.train()
+
+        # load metrics
+        train_accuracy = evaluate.load('accuracy')
+
+        print(f"Epoch {epoch + 1} training:")
+
+        for i, batch in enumerate(train_dataloader):
+
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
+
+            output = mymodel(input_ids, attention_mask)
+            predictions = output[0]
+
+            model_loss = loss(predictions, labels)
+
+            model_loss.backward()
+            optimizer.step()
+            lr_scheduler.step()
+            optimizer.zero_grad()
 
             ...
 
@@ -177,7 +231,7 @@ def train(mymodel, num_epochs, train_dataloader, validation_dataloader, device, 
         print(f" - Average validation metrics: accuracy={val_accuracy}")
 
 
-def pre_process(model_name, batch_size, device, small_subset=False):
+def pre_process(model_name, batch_size, device, small_subset):
     # download dataset
     print("Loading the dataset ...")
     dataset = load_dataset("boolq")
@@ -195,6 +249,11 @@ def pre_process(model_name, batch_size, device, small_subset=False):
         dataset_train_subset = dataset['train'][:8000]
         dataset_dev_subset = dataset['validation']
         dataset_test_subset = dataset['train'][8000:]
+
+    print("Size of the loaded dataset:")
+    print(f" - train: {len(dataset_train_subset['passage'])}")
+    print(f" - dev: {len(dataset_dev_subset['passage'])}")
+    print(f" - test: {len(dataset_test_subset['passage'])}")
 
     # maximum length of the input; any input longer than this will be truncated
     # we had to do some pre-processing on the data to figure what is the length of most instances in the dataset
@@ -244,7 +303,7 @@ def pre_process(model_name, batch_size, device, small_subset=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--experiment", type=str, default=None)
-    parser.add_argument("--small_subset", type=bool, default=False)
+    parser.add_argument("--small_subset", action='store_true')
     parser.add_argument("--num_epochs", type=int, default=1)
     parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--batch_size", type=int, default=32)
@@ -254,6 +313,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(f"Specified arguments: {args}")
 
+    assert type(args.small_subset) == bool, "small_subset must be a boolean"
+
     # load the data and models
     pretrained_model, train_dataloader, validation_dataloader, test_dataloader = pre_process(args.model,
                                                                                              args.batch_size,
@@ -261,13 +322,20 @@ if __name__ == "__main__":
                                                                                              args.small_subset)
 
     print(" >>>>>>>>  Starting training ... ")
-    train(...)
+    
+    train(pretrained_model, 
+          args.num_epochs, 
+          train_dataloader, 
+          validation_dataloader,
+          args.device, 
+          args.lr )
+    
 
     # print the GPU memory usage just to make sure things are alright
     print_gpu_memory()
 
-    val_accuracy = ...
+    val_accuracy = evaluate_model(pretrained_model, validation_dataloader, args.device)
     print(f" - Average DEV metrics: accuracy={val_accuracy}")
 
-    test_accuracy = ...
+    test_accuracy = evaluate_model(pretrained_model, test_dataloader, args.device)
     print(f" - Average TEST metrics: accuracy={test_accuracy}")
