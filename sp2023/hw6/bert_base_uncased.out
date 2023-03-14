@@ -1,0 +1,1147 @@
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0001, model='bert-base-uncased', num_epochs=5, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 847.51it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.63225}
+ - Average validation metrics: accuracy={'accuracy': 0.67217125382263}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.718125}
+ - Average validation metrics: accuracy={'accuracy': 0.691743119266055}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.840125}
+ - Average validation metrics: accuracy={'accuracy': 0.7061162079510703}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.91625}
+ - Average validation metrics: accuracy={'accuracy': 0.7030581039755351}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.954375}
+ - Average validation metrics: accuracy={'accuracy': 0.717737003058104}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 04:37:34 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   57C    P0   164W / 300W |  29380MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   54C    P0   178W / 300W |  25702MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   29C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      59826      C   ...sification_env/bin/python     8039MiB |
+|    1   10    0      35327      C   ...jeefzx3kp5jqdu/bin/python     8633MiB |
+|    1   11    0      35329      C   ...jeefzx3kp5jqdu/bin/python     8879MiB |
+|    1    9    0      44215      C   ...jeefzx3kp5jqdu/bin/python     8167MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.717737003058104}
+ - Average TEST metrics: accuracy={'accuracy': 0.6979677645409951}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0005, model='bert-base-uncased', num_epochs=7, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 857.56it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.5915}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.598625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.596625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.6095}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.611}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.619375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.621125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 05:14:18 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   51C    P0   177W / 300W |  21102MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   41C    P0   105W / 300W |   8183MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      61715      C   ...sification_env/bin/python     8039MiB |
+|    1    9    0      44215      C   ...jeefzx3kp5jqdu/bin/python     8167MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6201822004204625}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.001, model='bert-base-uncased', num_epochs=9, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 849.05it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.bias', 'cls.predictions.decoder.weight', 'cls.predictions.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.6075}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.618125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.6225}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.621875}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.622625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.622625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.622625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 8 training:
+ ===> Epoch 8
+ - Average training metrics: accuracy={'accuracy': 0.622625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 9 training:
+ ===> Epoch 9
+ - Average training metrics: accuracy={'accuracy': 0.622625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 06:01:14 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   52C    P0   170W / 300W |  21102MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   41C    P0    82W / 300W |   8183MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      64405      C   ...sification_env/bin/python     8039MiB |
+|    1    9    0      44215      C   ...jeefzx3kp5jqdu/bin/python     8167MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6257883672039243}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0001, model='bert-base-uncased', num_epochs=7, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 855.72it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.dense.weight', 'cls.predictions.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.630125}
+ - Average validation metrics: accuracy={'accuracy': 0.6675840978593273}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.72}
+ - Average validation metrics: accuracy={'accuracy': 0.6981651376146789}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.83675}
+ - Average validation metrics: accuracy={'accuracy': 0.6847094801223241}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.917}
+ - Average validation metrics: accuracy={'accuracy': 0.6892966360856269}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.95275}
+ - Average validation metrics: accuracy={'accuracy': 0.7015290519877676}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.977875}
+ - Average validation metrics: accuracy={'accuracy': 0.7110091743119266}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.98625}
+ - Average validation metrics: accuracy={'accuracy': 0.7155963302752294}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 06:37:58 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   47C    P0   111W / 300W |  16074MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   31C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0       2639      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.7155963302752294}
+ - Average TEST metrics: accuracy={'accuracy': 0.7210932025227751}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0001, model='bert-base-uncased', num_epochs=9, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 865.61it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.632375}
+ - Average validation metrics: accuracy={'accuracy': 0.6443425076452599}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.69975}
+ - Average validation metrics: accuracy={'accuracy': 0.6853211009174311}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.800875}
+ - Average validation metrics: accuracy={'accuracy': 0.6944954128440367}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.878875}
+ - Average validation metrics: accuracy={'accuracy': 0.7149847094801223}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.932}
+ - Average validation metrics: accuracy={'accuracy': 0.710703363914373}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.96}
+ - Average validation metrics: accuracy={'accuracy': 0.708256880733945}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.978875}
+ - Average validation metrics: accuracy={'accuracy': 0.7097859327217125}
+Epoch 8 training:
+ ===> Epoch 8
+ - Average training metrics: accuracy={'accuracy': 0.98775}
+ - Average validation metrics: accuracy={'accuracy': 0.708256880733945}
+Epoch 9 training:
+ ===> Epoch 9
+ - Average training metrics: accuracy={'accuracy': 0.993375}
+ - Average validation metrics: accuracy={'accuracy': 0.710703363914373}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 07:24:53 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   46C    P0   110W / 300W |  13986MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   31C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0       5296      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.710703363914373}
+ - Average TEST metrics: accuracy={'accuracy': 0.7168885774351786}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0005, model='bert-base-uncased', num_epochs=5, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 871.91it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.6005}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.619}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.6195}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.62}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.62}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 07:51:23 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   51C    P0   180W / 300W |  23422MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0       8584      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6405045550105115}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.0005, model='bert-base-uncased', num_epochs=9, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 867.40it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.weight', 'cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.582375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.591}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.596125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.603625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.609625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.609125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.611}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 8 training:
+ ===> Epoch 8
+ - Average training metrics: accuracy={'accuracy': 0.614125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 9 training:
+ ===> Epoch 9
+ - Average training metrics: accuracy={'accuracy': 0.614375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 08:38:18 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   51C    P0   155W / 300W |  23422MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      10738      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6601261387526279}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.001, model='bert-base-uncased', num_epochs=5, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 865.52it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.decoder.weight', 'cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.6005}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.622125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.622}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.622375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.62225}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 09:04:47 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   46C    P0   107W / 300W |  16074MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   31C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   30C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   30C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      13968      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6278906797477225}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.001, model='bert-base-uncased', num_epochs=7, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 864.63it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.LayerNorm.bias', 'cls.seq_relationship.weight', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.600625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.622375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.624375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.623875}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.6245}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.6245}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.6245}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 09:41:44 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   55C    P0   223W / 300W |  32174MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   53C    P0   153W / 300W |  22760MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   29C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    43W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0   11   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   11    0      15860      C   ...sification_env/bin/python     8039MiB |
+|    1    7    0      17369      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
+|    1   10    0      17611      C   ...jeefzx3kp5jqdu/bin/python     7345MiB |
+|    1   11    0      19152      C   ...jeefzx3kp5jqdu/bin/python     8047MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6152768044849334}
+
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.001, model='bert-base-uncased', num_epochs=5, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 832.04it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.LayerNorm.bias', 'cls.predictions.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.59925}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.598625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.606125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.609875}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.619125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 10:42:53 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   59C    P0   242W / 300W |  40225MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   29C    P0    43W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   29C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   29C    P0    43W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0    9   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0    9    0      23557      C   ...sification_env/bin/python     8039MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.629292221443588}
+Found cached dataset boolq (/home/czhan169/.cache/huggingface/datasets/boolq/default/0.1.0/bf0dd57da941c50de94ae3ce3cef7fea48c08f337a4b7aac484e9dddc5aa24e5)
+Specified arguments: Namespace(batch_size=32, device='cuda', experiment='overfit', lr=0.001, model='bert-base-uncased', num_epochs=7, small_subset=False)
+Loading the dataset ...
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 846.56it/s]
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForSequenceClassification: ['cls.seq_relationship.weight', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.bias', 'cls.seq_relationship.bias', 'cls.predictions.bias', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Slicing the data...
+Size of the loaded dataset:
+ - train: 8000
+ - dev: 3270
+ - test: 1427
+Loading the tokenizer...
+Loding the data into DS...
+ >>>>>>>> Initializing the data loaders ... 
+Loading the model ...
+Moving model to device ...cuda
+ >>>>>>>>  Starting training ... 
+ >>>>>>>>  Initializing optimizer
+Epoch 1 training:
+ ===> Epoch 1
+ - Average training metrics: accuracy={'accuracy': 0.592875}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 2 training:
+ ===> Epoch 2
+ - Average training metrics: accuracy={'accuracy': 0.589625}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 3 training:
+ ===> Epoch 3
+ - Average training metrics: accuracy={'accuracy': 0.596375}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 4 training:
+ ===> Epoch 4
+ - Average training metrics: accuracy={'accuracy': 0.606375}
+ - Average validation metrics: accuracy={'accuracy': 0.3782874617737003}
+Epoch 5 training:
+ ===> Epoch 5
+ - Average training metrics: accuracy={'accuracy': 0.61575}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 6 training:
+ ===> Epoch 6
+ - Average training metrics: accuracy={'accuracy': 0.6135}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+Epoch 7 training:
+ ===> Epoch 7
+ - Average training metrics: accuracy={'accuracy': 0.619125}
+ - Average validation metrics: accuracy={'accuracy': 0.6217125382262997}
+torch.cuda.memory_allocated: 0.835414GB
+torch.cuda.memory_reserved: 6.955078GB
+torch.cuda.max_memory_reserved: 6.955078GB
+Tue Mar 14 11:19:38 2023       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Graphics Device     On   | 00000000:17:00.0 Off |                   On |
+| N/A   60C    P0   211W / 300W |  42757MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   1  Graphics Device     On   | 00000000:31:00.0 Off |                   On |
+| N/A   43C    P0   146W / 300W |  18654MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   2  Graphics Device     On   | 00000000:B1:00.0 Off |                   On |
+| N/A   29C    P0    41W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+|   3  Graphics Device     On   | 00000000:CA:00.0 Off |                   On |
+| N/A   28C    P0    44W / 300W |     13MiB / 81251MiB |     N/A      Default |
+|                               |                      |              Enabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| MIG devices:                                                                |
++------------------+----------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |         Memory-Usage |        Vol|         Shared        |
+|      ID  ID  Dev |           BAR1-Usage | SM     Unc| CE  ENC  DEC  OFA  JPG|
+|                  |                      |        ECC|                       |
+|==================+======================+===========+=======================|
+|  0    9   0   0  |   8044MiB /  9728MiB | 14      0 |  1   0    0    0    0 |
+|                  |      4MiB / 16383MiB |           |                       |
++------------------+----------------------+-----------+-----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0    9    0      25814      C   ...sification_env/bin/python     8039MiB |
+|    1    7    0      29562      C   ...sification_env/bin/python     9709MiB |
+|    1    8    0      29736      C   ...sification_env/bin/python     8925MiB |
++-----------------------------------------------------------------------------+
+
+ - Average DEV metrics: accuracy={'accuracy': 0.6217125382262997}
+ - Average TEST metrics: accuracy={'accuracy': 0.6250875963559915}
